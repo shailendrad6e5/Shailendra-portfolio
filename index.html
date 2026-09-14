@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shailendra — Developer &amp; Builder</title>
+  <meta name="description" content="Shailendra is a student and developer who builds precise, thoughtful digital experiences.">
+  <link rel="canonical" href="https://shailendra.dev">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shailendra — Developer & Builder">
+  <meta property="og:description" content="Student and developer building precise, thoughtful digital experiences.">
+  <meta property="og:url" content="https://shailendra.dev">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shailendra — Developer & Builder">
+  <meta name="twitter:description" content="Student and developer building precise, thoughtful digital experiences.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-label"></span>
+  </div>
+
+  <!-- ─── INTRO ─── -->
+  <div class="intro-screen" id="introScreen" aria-hidden="true">
+    <div class="intro-inner">
+      <span class="intro-meta mono">Personal Portfolio / 2026</span>
+      <div class="intro-name-wrap">
+        <span class="intro-name">Shailendra</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── HEADER ─── -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="nav-wordmark">S<span class="nav-dot accent">.</span></a>
+      <button class="nav-menu-btn" id="menuBtn"
+        aria-expanded="false"
+        aria-controls="fullscreenNav"
+        aria-label="Open navigation menu">
+        <span class="menu-label mono">Menu</span>
+        <span class="menu-icon" aria-hidden="true">
+          <span class="mi-bar"></span>
+          <span class="mi-bar"></span>
+        </span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Full-screen nav overlay -->
+  <div class="nav-overlay" id="fullscreenNav" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <nav aria-label="Full screen navigation">
+      <ul class="nav-big-list">
+        <li><a href="#home"    class="nav-big-link"><span class="nbl-idx mono">01</span><span class="nbl-text">Home</span></a></li>
+        <li><a href="#about"   class="nav-big-link"><span class="nbl-idx mono">02</span><span class="nbl-text">About</span></a></li>
+        <li><a href="#skills"  class="nav-big-link"><span class="nbl-idx mono">03</span><span class="nbl-text">Skills</span></a></li>
+        <li><a href="#work"    class="nav-big-link"><span class="nbl-idx mono">04</span><span class="nbl-text">Work</span></a></li>
+        <li><a href="#journey" class="nav-big-link"><span class="nbl-idx mono">05</span><span class="nbl-text">Journey</span></a></li>
+        <li><a href="#contact" class="nav-big-link"><span class="nbl-idx mono">06</span><span class="nbl-text">Contact</span></a></li>
+      </ul>
+    </nav>
+    <div class="nav-overlay-footer mono">shailendra — developer &amp; builder</div>
+  </div>
+
+  <!-- Scroll progress line -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ─── MAIN ─── -->
+  <main id="main-content">
+
+    <!-- ====================================================
+         HERO
+         ==================================================== -->
+    <section id="home" class="hero-section" aria-label="Introduction">
+      <div class="hero-eyebrow">
+        <span class="mono hero-label">Student / Developer / Builder</span>
+        <span class="mono hero-year">2026</span>
+      </div>
+
+      <!-- The name is the hero. It owns the viewport. -->
+      <div class="hero-name-band" aria-label="Shailendra">
+        <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+        <h1 class="hero-name" id="heroName" aria-label="Shailendra">Shailendra<span class="accent">.</span></h1>
+      </div>
+
+      <div class="hero-footer-row">
+        <p class="hero-statement" id="heroStatement">
+          I build digital experiences,<br>experiments and things worth using.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#work"    class="btn-primary" data-cursor="view">View Work</a>
+          <a href="#contact" class="btn-ghost"   data-cursor="connect">Get in touch</a>
+        </div>
+        <div class="hero-scroll-hint mono" aria-hidden="true">
+          <span class="scroll-track"><span class="scroll-thumb" id="scrollThumb"></span></span>
+          <span>Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         ABOUT
+         ==================================================== -->
+    <section id="about" class="about-section" aria-label="About Shailendra">
+      <div class="section-rule" aria-hidden="true"></div>
+      <div class="about-inner">
+
+        <!-- Editorial verb cluster — scale contrast is the composition -->
+        <div class="about-verbs" aria-hidden="true">
+          <span class="av av--lg">Learning</span>
+          <span class="av av--md">Building</span>
+          <span class="av av--sm">Solving</span>
+        </div>
+
+        <div class="about-body-grid">
+          <div class="about-intro">
+            <p class="about-lead">I'm a student developer obsessed with the craft of frontend engineering. Not the kind that ships features fast — the kind that makes things feel exactly right.</p>
+            <p class="about-body-text">Right now I'm deep in the intersection of visual design and systems thinking — learning how well-engineered interfaces become invisible to users.</p>
+          </div>
+
+          <dl class="about-spec">
+            <div class="spec-row">
+              <dt class="mono">Status</dt>
+              <dd>Student &amp; Developer</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="mono">Focus</dt>
+              <dd>Frontend Engineering</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="mono">Curiosity</dt>
+              <dd>Systems Design, UI/UX Craft</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="mono">Building</dt>
+              <dd>Web projects &amp; experiments</dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================
+         SKILLS (expandable list)
+         ==================================================== -->
+    <section id="skills" class="skills-section" aria-label="Technologies and skills">
+      <div class="section-rule" aria-hidden="true"></div>
+      <div class="skills-inner">
+        <div class="skills-heading-row">
+          <span class="mono section-idx">03</span>
+          <h2 class="skills-heading">What I work with</h2>
+        </div>
+        <ul class="skill-list" id="skillList" aria-label="Skills">
+          <!-- Populated by JS -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         WORK / PROJECTS
+         ==================================================== -->
+    <section id="work" class="work-section" aria-label="Selected projects">
+      <div class="section-rule" aria-hidden="true"></div>
+      <div class="work-heading-row">
+        <span class="mono section-idx">04</span>
+        <h2 class="work-heading">Selected Work</h2>
+      </div>
+      <div class="work-bands" id="workBands">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- ====================================================
+         JOURNEY
+         ==================================================== -->
+    <section id="journey" class="journey-section" aria-label="Developer journey and timeline">
+      <div class="section-rule" aria-hidden="true"></div>
+      <div class="journey-inner">
+        <div class="journey-left">
+          <span class="mono section-idx">05</span>
+          <h2 class="journey-heading">The story<br>so far.</h2>
+        </div>
+        <ol class="journey-list" id="journeyList">
+          <!-- Populated by JS -->
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         CONTACT
+         ==================================================== -->
+    <section id="contact" class="contact-section" aria-label="Contact">
+      <div class="section-rule" aria-hidden="true"></div>
+      <div class="contact-inner">
+
+        <!-- Big type statement -->
+        <div class="contact-statement" aria-label="Let's build something.">
+          <div class="cs-line overflow-clip"><span class="cs-word">Let's</span></div>
+          <div class="cs-line overflow-clip"><span class="cs-word">build</span></div>
+          <div class="cs-line overflow-clip"><span class="cs-word cs-accent">something.</span></div>
+        </div>
+
+        <!-- Contact links -->
+        <div class="contact-links" id="contactLinks">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Form + Resume -->
+        <div class="contact-lower">
+          <form id="contactForm" class="contact-form" novalidate aria-label="Contact form">
+            <div class="form-header mono">Send a message</div>
+            <div class="field-group">
+              <label for="cf-name" class="mono">Name</label>
+              <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Your name">
+              <span class="field-error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="field-group">
+              <label for="cf-email" class="mono">Email</label>
+              <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="your@email.com">
+              <span class="field-error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="field-group">
+              <label for="cf-message" class="mono">Message</label>
+              <textarea id="cf-message" name="message" rows="4" required placeholder="What's on your mind?"></textarea>
+              <span class="field-error" role="alert" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="form-submit-btn">
+              <span class="submit-text">Send message</span>
+              <span class="submit-status" aria-live="polite"></span>
+            </button>
+            <p class="form-note mono">This form is a UI prototype — no data is transmitted.</p>
+          </form>
+
+          <div class="contact-aside">
+            <div class="resume-block">
+              <p class="mono resume-prompt">Want the full picture?</p>
+              <a href="/assets/resume.pdf" class="resume-link" target="_blank" rel="noopener noreferrer">
+                <span>View Resume</span>
+                <span class="resume-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-name">Shailendra</span>
+        <span class="mono footer-sub">Designed &amp; built with curiosity.</span>
+      </div>
+      <div class="footer-right">
+        <span class="mono footer-copy">&copy; <span id="footerYear"></span></span>
+        <button id="backToTop" class="back-top mono" aria-label="Scroll back to top">↑ Top</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── CASE STUDY OVERLAY ─── -->
+  <div class="case-overlay" id="caseOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="caseTitle">
+    <div class="case-top-bar">
+      <button class="case-close-btn" id="caseCloseBtn" aria-label="Close case study">
+        <span class="mono">Close</span><span class="close-x" aria-hidden="true"> ×</span>
+      </button>
+    </div>
+    <div class="case-scroll-area">
+      <div class="case-content" id="caseContent">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
