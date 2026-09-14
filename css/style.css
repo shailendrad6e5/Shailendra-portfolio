@@ -91,12 +91,7 @@ ul, ol { list-style: none; }
   border-radius: 1px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .intro-screen { display: none !important; }
-  .hero-name, .hero-statement, .cs-word { clip-path: none !important; opacity: 1 !important; transform: none !important; }
-  .section-rule::after { transform: scaleX(1) !important; }
-}
+/* prefers-reduced-motion block removed to enforce animations */
 
 /* =============================================================
    CUSTOM CURSOR
