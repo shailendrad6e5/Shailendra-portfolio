@@ -136,11 +136,25 @@
     });
 
     // Hide/show header on scroll direction
-    let lastY = 0;
+    let lastY = window.scrollY;
+    let ticking = false;
+
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      siteHeader.classList.toggle('nav-hidden', y > lastY && y > 80);
-      lastY = y;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          // Only hide if scrolling DOWN and past 120px from top
+          // Always show if scrolling UP
+          if (y > lastY && y > 120) {
+            siteHeader.classList.add('nav-hidden');
+          } else {
+            siteHeader.classList.remove('nav-hidden');
+          }
+          lastY = y;
+          ticking = false;
+        });
+        ticking = true;
+      }
     }, { passive: true });
   }
 
@@ -148,6 +162,8 @@
     navOverlay.setAttribute('aria-hidden', 'false');
     menuBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    // Always show header when menu is open
+    siteHeader.classList.remove('nav-hidden');
     // Focus first link for keyboard users
     setTimeout(() => navOverlay.querySelector('a')?.focus(), 80);
   }
@@ -156,6 +172,8 @@
     navOverlay.setAttribute('aria-hidden', 'true');
     menuBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    // Keep header visible after closing menu
+    siteHeader.classList.remove('nav-hidden');
     menuBtn.focus();
   }
 
