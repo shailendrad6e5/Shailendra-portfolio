@@ -249,6 +249,20 @@ ul, ol { list-style: none; }
 .nav-menu-btn[aria-expanded="true"] .mi-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .nav-menu-btn[aria-expanded="true"] .mi-bar:nth-child(2) { transform: translateY(-6px) rotate(-45deg); }
 
+/* Scroll lock when menu or modals are open */
+html.menu-open,
+body.menu-open {
+  overflow: hidden !important;
+  height: 100% !important;
+  touch-action: none !important;
+  overscroll-behavior: none !important;
+}
+
+html.menu-open .site-header,
+body.menu-open .site-header {
+  transform: translateY(0) !important;
+}
+
 /* Full-screen overlay nav */
 .nav-overlay {
   position: fixed; inset: 0;
@@ -257,9 +271,11 @@ ul, ol { list-style: none; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--sp-16) var(--px) var(--sp-8);
+  padding: clamp(3rem, 7vh, 5rem) var(--px) clamp(2rem, 5vh, 3.5rem);
   opacity: 0;
   pointer-events: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   transition: opacity var(--dur-slow) var(--ease-out);
 }
 
@@ -268,7 +284,7 @@ ul, ol { list-style: none; }
 .nav-big-list {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-1);
+  gap: clamp(0.2rem, 0.8vh, 0.6rem);
   border-top: 1px solid var(--rule);
 }
 
@@ -276,14 +292,13 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: baseline;
   gap: var(--sp-4);
-  padding: var(--sp-3) 0;
+  padding: clamp(0.4rem, 1.4vh, 1.1rem) 0;
   border-bottom: 1px solid var(--rule);
   font-family: var(--f-display);
-  font-size: clamp(2rem, 5.5vw, 5rem);
+  font-size: clamp(1.6rem, 4.2vh, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--white);
-  transition: color var(--dur-fast);
   clip-path: inset(0 0 0 0);
   transform: translateX(-24px);
   opacity: 0;
@@ -302,7 +317,7 @@ ul, ol { list-style: none; }
 .nbl-idx { color: var(--white-dim); font-size: var(--fs-micro); line-height: 1; }
 .nbl-text { line-height: 1; }
 
-/* Stagger in JS via --delay custom property */
+/* Stagger transitions */
 .nav-big-link:nth-child(1) { transition-delay: 60ms; }
 .nav-big-link:nth-child(2) { transition-delay: 100ms; }
 .nav-big-link:nth-child(3) { transition-delay: 140ms; }
@@ -312,7 +327,7 @@ ul, ol { list-style: none; }
 
 .nav-overlay-footer {
   position: absolute;
-  bottom: var(--sp-6);
+  bottom: var(--sp-4);
   left: var(--px);
   color: var(--white-dim);
   font-size: var(--fs-micro);

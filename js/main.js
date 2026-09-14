@@ -140,8 +140,16 @@
     let ticking = false;
 
     window.addEventListener('scroll', () => {
+      // Do not hide header or process scroll if menu is open
+      if (navOverlay.getAttribute('aria-hidden') === 'false') return;
+
       if (!ticking) {
         requestAnimationFrame(() => {
+          if (navOverlay.getAttribute('aria-hidden') === 'false') {
+            siteHeader.classList.remove('nav-hidden');
+            ticking = false;
+            return;
+          }
           const y = window.scrollY;
           // Only hide if scrolling DOWN and past 120px from top
           // Always show if scrolling UP
@@ -158,10 +166,18 @@
     }, { passive: true });
   }
 
+  function preventScroll(e) {
+    e.preventDefault();
+  }
+
   function openNav() {
     navOverlay.setAttribute('aria-hidden', 'false');
     menuBtn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+    // Prevent mouse wheel and touch scroll on background page
+    window.addEventListener('wheel', preventScroll, { passive: false });
+    window.addEventListener('touchmove', preventScroll, { passive: false });
     // Always show header when menu is open
     siteHeader.classList.remove('nav-hidden');
     // Focus first link for keyboard users
@@ -171,9 +187,13 @@
   function closeNav() {
     navOverlay.setAttribute('aria-hidden', 'true');
     menuBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+    window.removeEventListener('wheel', preventScroll);
+    window.removeEventListener('touchmove', preventScroll);
     // Keep header visible after closing menu
     siteHeader.classList.remove('nav-hidden');
+    lastY = window.scrollY;
     menuBtn.focus();
   }
 
