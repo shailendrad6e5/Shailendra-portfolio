@@ -30,7 +30,7 @@
   // ─── Helpers ──────────────────────────────────────────────
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
-  const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced = () => false; // window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const touch   = () => window.matchMedia('(hover: none)').matches;
 
   // ─── Boot ─────────────────────────────────────────────────

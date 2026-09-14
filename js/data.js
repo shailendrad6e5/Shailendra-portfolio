@@ -9,9 +9,9 @@ const portfolioData = {
   bio: 'I\'m a student developer obsessed with the craft of frontend engineering. Not the kind that ships features fast. The kind that makes things feel exactly right.',
 
   social: {
-    github:   'https://github.com',      // replace with real URL
-    linkedin: 'https://linkedin.com',    // replace with real URL
-    email:    'hello@example.com'        // replace with real email
+    github:   'https://github.com/shailendrad6e5/',
+    linkedin: 'https://www.linkedin.com/in/shailendra-kumawat/',
+    email:    'shailendra@example.com'        // user didn't specify email, let's leave it or set a placeholder
   },
 
   skills: [
