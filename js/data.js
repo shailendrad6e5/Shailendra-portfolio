@@ -11,7 +11,7 @@ const portfolioData = {
   social: {
     github:   'https://github.com/shailendrad6e5/',
     linkedin: 'https://www.linkedin.com/in/shailendra-kumawat/',
-    email:    'shailendra@example.com'
+    email:    'shailendrdak5432@gmail.com'
   },
 
   skills: [
